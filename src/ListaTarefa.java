@@ -16,17 +16,13 @@ public class ListaTarefa {
     }
 
     public void removerTarefa(String descricao) {
-        for (int i = 0; i < tarefaList.size(); i++) {
-            String descricaoNoArray = tarefaList.get(i).getDescricao();
-            if (descricaoNoArray.equals(descricao)) {
-                tarefaList.remove(i);
-                break;
-
-            } else if (i == tarefaList.size() - 1) {
-                System.err.println("Tarefa não existente!");
+        List<Tarefa> tarefasRemover = new ArrayList<>(); // creates a new array with the elements to be removed
+        for (Tarefa t : tarefaList) {
+            if (t.getDescricao().equalsIgnoreCase(descricao)) {
+                tarefasRemover.add(t);
             }
-
         }
+        tarefaList.removeAll(tarefasRemover);
     }
 
     public int obterNumeroTotalTarefas() {
@@ -35,9 +31,7 @@ public class ListaTarefa {
 
     public void obterDescricoesTarefas() {
 
-        for (int i = 0; i < tarefaList.size(); i++) {
-            System.out.println(tarefaList.get(i).getDescricao());
-        }
+        System.out.println(tarefaList);
 
     }
 

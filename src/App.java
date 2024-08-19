@@ -5,12 +5,14 @@ public class App {
         listaTarefa.adicionarTarefa("correr");
         listaTarefa.adicionarTarefa("pular");
         listaTarefa.adicionarTarefa("assistir");
+        listaTarefa.adicionarTarefa("assistir");
 
         listaTarefa.obterDescricoesTarefas();
         System.out.println("antes: " + listaTarefa.obterNumeroTotalTarefas());
-        listaTarefa.removerTarefa("asistir");
+        listaTarefa.removerTarefa("assistir");
         System.out.println("depois: " + listaTarefa.obterNumeroTotalTarefas());
-        System.out.println(listaTarefa.tarefaList.get(1).getDescricao());
+        listaTarefa.obterDescricoesTarefas();
+
     }
 
 }
